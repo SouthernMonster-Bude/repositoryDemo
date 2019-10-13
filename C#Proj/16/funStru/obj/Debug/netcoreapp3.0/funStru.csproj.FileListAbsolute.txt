@@ -1,0 +1,11 @@
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\bin\Debug\netcoreapp3.0\funStru.exe
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\bin\Debug\netcoreapp3.0\funStru.deps.json
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\bin\Debug\netcoreapp3.0\funStru.runtimeconfig.json
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\bin\Debug\netcoreapp3.0\funStru.runtimeconfig.dev.json
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\bin\Debug\netcoreapp3.0\funStru.dll
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\bin\Debug\netcoreapp3.0\funStru.pdb
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\obj\Debug\netcoreapp3.0\funStru.csprojAssemblyReference.cache
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\obj\Debug\netcoreapp3.0\funStru.AssemblyInfoInputs.cache
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\obj\Debug\netcoreapp3.0\funStru.AssemblyInfo.cs
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\obj\Debug\netcoreapp3.0\funStru.dll
+D:\GitRepository\reposioryDemo\C#Proj\16\funStru\obj\Debug\netcoreapp3.0\funStru.pdb

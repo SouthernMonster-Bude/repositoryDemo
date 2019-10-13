@@ -1,0 +1,11 @@
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\obj\Debug\netcoreapp3.0\TimeTest.csprojAssemblyReference.cache
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\obj\Debug\netcoreapp3.0\TimeTest.AssemblyInfoInputs.cache
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\obj\Debug\netcoreapp3.0\TimeTest.AssemblyInfo.cs
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\bin\Debug\netcoreapp3.0\TimeTest.exe
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\bin\Debug\netcoreapp3.0\TimeTest.deps.json
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\bin\Debug\netcoreapp3.0\TimeTest.runtimeconfig.json
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\bin\Debug\netcoreapp3.0\TimeTest.runtimeconfig.dev.json
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\bin\Debug\netcoreapp3.0\TimeTest.dll
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\bin\Debug\netcoreapp3.0\TimeTest.pdb
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\obj\Debug\netcoreapp3.0\TimeTest.dll
+D:\GitRepository\reposioryDemo\C#Proj\16\TimeTest\obj\Debug\netcoreapp3.0\TimeTest.pdb
