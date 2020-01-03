@@ -5,9 +5,12 @@ public class User {
     private String id;
     private String username;
 
-    public User(){}
+    public User(){
+        System.out.println("new User() "+this+" created!");
+    }
 
     public User(String id, String username) {
+        System.out.println("User("+id+", "+username+")  "+this+"  created!");
         this.id = id;
         this.username = username;
     }

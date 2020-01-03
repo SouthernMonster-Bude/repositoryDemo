@@ -1,0 +1,24 @@
+###  创建一个新的 people 索引，注意，将IP替换为你们自己的主机地址
+PUT http://localhost:9200/people
+Content-Type: application/json
+
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "type": {"type": "keyword"},
+      "name": {"type": "text"},
+      "country": {"type": "keyword"},
+      "age": {"type": "integer"},
+      "date": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis"
+      }
+    }
+  }
+}
+
+###

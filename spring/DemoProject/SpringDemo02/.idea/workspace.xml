@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="704a3f86-0f24-4996-922a-8959aabe67c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../normalJavaProject/CodeTraining/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../normalJavaProject/CodeTraining/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../normalJavaProject/CodeTraining/CodeTraining.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../normalJavaProject/CodeTraining/src/main/java/h/j/m/t1/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../normalJavaProject/CodeTraining/src/main/java/h/j/m/t1/httpPro.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/src/main/java/com/hjm/test/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/src/main/java/com/hjm/test/dto/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/src/main/java/com/hjm/test/test/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/src/main/java/com/hjm/test/test/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/src/main/resources/config/spring/sping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/src/main/resources/config/spring/sping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/target/classes/com/hjm/test/dto/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/target/classes/com/hjm/test/dto/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/target/classes/com/hjm/test/test/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/target/classes/com/hjm/test/test/TestMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringDemo/target/classes/config/spring/sping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringDemo/target/classes/config/spring/sping.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.3.9/apache-maven-3.3.9" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.3.9\apache-maven-3.3.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Vh4mxJhVFXDP1campAax1JFxvu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/conf/spring" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\0000\respository2\spring\DemoProject\SpringDemo02\src\main\resources\conf\db" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\0000\respository2\spring\DemoProject\SpringDemo02\src\main\resources\conf\spring" />
+      <recent name="D:\0000\respository2\spring\DemoProject\SpringDemo02\src\main\resources\conf.db" />
+      <recent name="D:\workapace\VMFile\SpringDemo02\src\main\resources\conf\spring" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.JDBCDemo.testTransactionDemo">
+    <configuration name="JDBCDemo.testDBPoolDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hjm.mod.sys.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hjm.mod.sys.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hjm.mod.sys.dao.JDBCDemo" />
+      <option name="METHOD_NAME" value="testDBPoolDemo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCDemo.testDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hjm.mod.sys.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hjm.mod.sys.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hjm.mod.sys.dao.JDBCDemo" />
+      <option name="METHOD_NAME" value="testDemo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCDemo.testQueryDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hjm.mod.sys.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hjm.mod.sys.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hjm.mod.sys.dao.JDBCDemo" />
+      <option name="METHOD_NAME" value="testQueryDemo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCDemo.testTransactionDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hjm.mod.sys.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hjm.mod.sys.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hjm.mod.sys.dao.JDBCDemo" />
+      <option name="METHOD_NAME" value="testTransactionDemo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCDemo.testUtilsDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringDemo02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hjm.mod.sys.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hjm.mod.sys.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hjm.mod.sys.dao.JDBCDemo" />
+      <option name="METHOD_NAME" value="testUtilsDemo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JDBCDemo.testTransactionDemo" />
+        <item itemvalue="JUnit.JDBCDemo.testQueryDemo" />
+        <item itemvalue="JUnit.JDBCDemo.testDBPoolDemo" />
+        <item itemvalue="JUnit.JDBCDemo.testUtilsDemo" />
+        <item itemvalue="JUnit.JDBCDemo.testDemo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\len\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="704a3f86-0f24-4996-922a-8959aabe67c9" name="Default Changelist" comment="" />
+      <created>1575515470112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575515470112</updated>
+      <workItem from="1575515476541" duration="5761000" />
+      <workItem from="1575870351688" duration="2554000" />
+      <workItem from="1575882977964" duration="3214000" />
+      <workItem from="1576475298622" duration="596000" />
+      <workItem from="1576638493662" duration="587000" />
+      <workItem from="1576639693274" duration="5187000" />
+      <workItem from="1577180251297" duration="5000" />
+      <workItem from="1577180691039" duration="52000" />
+      <workItem from="1577180793124" duration="62000" />
+      <workItem from="1577181350727" duration="48000" />
+      <workItem from="1577181531608" duration="151000" />
+      <workItem from="1577688578202" duration="88000" />
+      <workItem from="1577688756838" duration="16000" />
+      <workItem from="1577689274325" duration="113000" />
+      <workItem from="1577692188468" duration="52000" />
+      <workItem from="1577692383956" duration="89000" />
+      <workItem from="1577692500473" duration="13000" />
+      <workItem from="1577692627877" duration="1697000" />
+      <workItem from="1577694328988" duration="978000" />
+      <workItem from="1577761410479" duration="207000" />
+      <workItem from="1577763440577" duration="55000" />
+      <workItem from="1577763875075" duration="264000" />
+      <workItem from="1578022105399" duration="9783000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="505" y="225" key="#Auto_Import" timestamp="1578022486636">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="505" y="225" key="#Auto_Import/0.0.1858.1080@0.0.1858.1080" timestamp="1578022486636" />
+    <state x="637" y="356" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578022597006">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="637" y="356" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1578022597006" />
+    <state x="659" y="408" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1577692473868">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="659" y="408" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1577692473868" />
+    <state x="718" y="283" key="#com.intellij.ide.util.MemberChooser" timestamp="1578042937545">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="718" y="283" key="#com.intellij.ide.util.MemberChooser/0.0.1858.1080@0.0.1858.1080" timestamp="1578042937545" />
+    <state x="703" y="280" key="FileChooserDialogImpl" timestamp="1577698722670">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="703" y="280" key="FileChooserDialogImpl/0.0.1857.1080@0.0.1857.1080" timestamp="1577698722670" />
+    <state width="1679" height="294" key="GridCell.Tab.0.bottom" timestamp="1578045592776">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592776" />
+    <state width="1679" height="294" key="GridCell.Tab.0.center" timestamp="1578045592776">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592776" />
+    <state width="1679" height="294" key="GridCell.Tab.0.left" timestamp="1578045592776">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592776" />
+    <state width="1679" height="294" key="GridCell.Tab.0.right" timestamp="1578045592776">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592776" />
+    <state width="1679" height="294" key="GridCell.Tab.1.bottom" timestamp="1578045592777">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.1.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592777" />
+    <state width="1679" height="294" key="GridCell.Tab.1.center" timestamp="1578045592777">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.1.center/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592777" />
+    <state width="1679" height="294" key="GridCell.Tab.1.left" timestamp="1578045592777">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.1.left/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592777" />
+    <state width="1679" height="294" key="GridCell.Tab.1.right" timestamp="1578045592777">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1679" height="294" key="GridCell.Tab.1.right/0.0.1858.1080@0.0.1858.1080" timestamp="1578045592777" />
+    <state x="443" y="222" key="Maven.ArtifactSearchDialog" timestamp="1578036787642">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="443" y="222" key="Maven.ArtifactSearchDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1578036787642" />
+    <state x="408" y="113" key="SettingsEditor" timestamp="1578039319286">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="408" y="113" key="SettingsEditor/0.0.1857.1080@0.0.1857.1080" timestamp="1577694321684" />
+    <state x="408" y="113" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1578039319286" />
+    <state x="608" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1577763445185">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="608" y="362" key="com.intellij.ide.util.TipDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1577763445185" />
+    <state x="580" y="140" width="667" height="855" key="find.popup" timestamp="1578034434326">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="580" y="140" width="667" height="855" key="find.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1578034434326" />
+    <state x="766" y="397" width="574" height="606" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1577694366305">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="766" y="397" width="574" height="606" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1577694366305" />
+    <state x="576" y="287" width="673" height="678" key="search.everywhere.popup" timestamp="1578039546890">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="576" y="287" width="672" height="678" key="search.everywhere.popup/0.0.1857.1080@0.0.1857.1080" timestamp="1577763996644" />
+    <state x="576" y="287" width="673" height="678" key="search.everywhere.popup/0.0.1858.1080@0.0.1858.1080" timestamp="1578039546890" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hjm/mod/utils/JDBCConnection.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

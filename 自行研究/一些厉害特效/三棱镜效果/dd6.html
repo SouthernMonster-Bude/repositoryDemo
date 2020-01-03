@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--n边形的的内角和是180，外角和是360，
+        内角 = 180-360/n
+    -->
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            margin-left: -200px;
+            margin-top: -200px;
+            perspective: 500px;
+
+        }
+
+        #wrap > .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            /*background: pink;*/
+            transform-style: preserve-3d;
+            transition: 0.3s;
+            /*transform-origin:center center -50px;*/
+        }
+        #wrap > .box1{
+            left: -200px;
+        }
+        #wrap > .box3{
+            left: 200px;
+        }
+        #wrap > .box2{
+            z-index: 200;
+        }
+
+
+    </style>
+    <script src=".\js\jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+    <div class="box box1">
+        <div style="opacity: 0.7;">0</div>
+        <div style="opacity: 0.7;">1</div>
+        <div style="opacity: 0.7;">2</div>
+        <div style="opacity: 0.7;">3</div>
+        <div style="opacity: 0.7;">4</div>
+        <div style="opacity: 0.7;">5</div>
+        <div style="opacity: 0.7;">6</div>
+        <div style="opacity: 0.7;">7</div>
+        <div style="opacity: 0.7;">8</div>
+        <div style="opacity: 0.7;">9</div>
+    </div>
+    <div class="box box2">
+        <div style="opacity: 0.7;">0</div>
+        <div style="opacity: 0.7;">1</div>
+        <div style="opacity: 0.7;">2</div>
+        <div style="opacity: 0.7;">3</div>
+        <div style="opacity: 0.7;">4</div>
+        <div style="opacity: 0.7;">5</div>
+        <div style="opacity: 0.7;">6</div>
+        <div style="opacity: 0.7;">7</div>
+        <div style="opacity: 0.7;">8</div>
+        <div style="opacity: 0.7;">9</div>
+    </div>
+    <div class="box box3">
+        <div style="opacity: 0.7;">0</div>
+        <div style="opacity: 0.7;">1</div>
+        <div style="opacity: 0.7;">2</div>
+        <div style="opacity: 0.7;">3</div>
+        <div style="opacity: 0.7;">4</div>
+        <div style="opacity: 0.7;">5</div>
+        <div style="opacity: 0.7;">6</div>
+        <div style="opacity: 0.7;">7</div>
+        <div style="opacity: 0.7;">8</div>
+        <div style="opacity: 0.7;">9</div>
+    </div>
+    <script>
+        var sideWidth = 100;
+        var sideHeight = 100;
+        var sideColor = '#00be06';
+        var zIndex = -sideHeight*Math.sqrt(0.5/(1-Math.cos(2*Math.PI/10))-0.25);
+        $(".box").css('transform-origin','center center '+zIndex+'px');
+        function generateCubic(el){
+            $(el).each(function (i) {
+                $(this).css('position','absolute');
+                $(this).css('width',sideWidth+'px');
+                $(this).css('height',sideHeight+'px');
+                $(this).css('background',sideColor);
+                $(this).css('text-align','center');
+                $(this).css('border','1px solid #333');
+                $(this).css('color','#FFF');
+                $(this).css('font','700 50px/'+sideHeight+'px "微软雅黑"');
+                $(this).css('transform-origin','center center '+zIndex+'px');
+                var deg = 36;
+                deg = deg * i;
+                $(this).css('transform','rotateX('+deg+'deg)');
+            });
+        }
+        generateCubic(".box1 div")
+        generateCubic(".box2 div")
+        generateCubic(".box3 div")
+        var min_deg = 0,mid_deg = 0,max_deg = 0;
+        var min=0,mid=0,max=0;
+        setInterval(()=>{
+            min++;
+            min_deg-=36;
+            $(".box3").css('transform','rotateX('+min_deg+'deg)');
+            if(min==10){
+                min=0;
+                mid++;
+                mid_deg-=36;
+                $(".box2").css('transform','rotateX('+mid_deg+'deg)');
+                if(mid==10){
+                    mid=0;
+                    max_deg-=36;
+                    $(".box1").css('transform','rotateX('+max_deg+'deg)');
+                }
+            }
+        },1000)
+//        var deg = 0;
+//        $(".box").css('transform','rotateY('+90+'deg)');
+//        $(".box div").eq(0).css('background','blue');
+//        setInterval(()=>{
+//            deg++;
+//            $(".box div").eq(0).css('transform','rotateX('+deg+'deg)');
+//        },60)
+
+    </script>
+</div>
+</body>
+</html>

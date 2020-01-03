@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--n边形的的内角和是180，外角和是360，
+        内角 = 180-360/n
+    -->
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            margin-left: -200px;
+            margin-top: -200px;
+            /*border: 1px solid;*/
+            perspective: 500px;
+
+        }
+        #wrap > .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            /*background: pink;*/
+            transform-style: preserve-3d;
+            transition: 0.1s;
+            transform-origin:center center -50px;
+        }
+
+
+    </style>
+    <script src=".\js\jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+    <div class="box">
+        <div style="opacity: 0.7;">1</div>
+        <div style="opacity: 0.7;">2</div>
+        <div style="opacity: 0.7;">3</div>
+        <div style="opacity: 0.7;">4</div>
+        <div style="opacity: 0.7;">5</div>
+        <div style="opacity: 0.7;">6</div>
+    </div>
+
+
+    <script>
+//        width: 200px;
+//        height: 100px;
+//        position: absolute;
+//        background-color: pink;
+//        text-align: center;
+//        font: 700 20px/100px "微软雅黑";
+//        transform-origin: center center -28.86751345948129px;
+        var sideWidth = 100;
+        var sideHeight = 100;
+        var sideColor = 'pink';
+        var zIndex = -sideHeight/2;
+//        $('.box').css('transform-origin','center center '+zIndex+'px;');
+//console.log('transform-origin','center center '+zIndex+'px;')
+//        $('.box').css('transform','rotateY(45deg)');
+
+        $('.box div').each(function (i) {
+            $(this).css('position','absolute');
+            $(this).css('width',sideWidth+'px');
+            $(this).css('height',sideHeight+'px');
+            $(this).css('background',sideColor);
+            $(this).css('text-align','center');
+            $(this).css('font','700 20px/'+sideHeight+'px "微软雅黑"');
+            $(this).css('transform-origin','center center '+zIndex+'px');
+            var deg = 90;
+            if(i<4){
+                deg = deg * i;
+                $(this).css('transform','rotateX('+deg+'deg)');
+            }else if(i==4){
+                $(this).css('transform','rotateY(90deg)');
+            }else{
+                $(this).css('transform','rotateY(-90deg)');
+            }
+        });
+        var startDregX = 0;
+        var startDregY = 0;
+        /*setInterval(function(){
+            if(startDregX>-360){
+                startDregX-=10;
+                $('.box').css('transform','rotateX('+startDregX+'deg)');
+            }else {
+                if(startDregY<360){
+                    startDregY+=10;
+                    $('.box').css('transform','rotateY('+startDregY+'deg)');
+                }else {
+                    startDregX=0;
+                    startDregY=0;
+                }
+            }
+        },100)*/
+
+</script>
+</div>
+</body>
+</html>
