@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ECharts</title>
+    <script src="../../common/js/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+  
+<script src="js/option.js"></script>
+<script>
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+// 使用刚指定的配置项和数据显示图表。
+// myChart.setOption(option);
+let updating = false;
+setInterval(()=>{
+    if(!updating){
+        for(let i=0;i<100;i++)
+        data.push([parseInt(randomNormalDistribution()*1000),parseInt(randomNormalDistribution()*1000),1])
+        updating = true;
+    }
+    refresh(function(){
+        updating = false;
+    });
+},60)
+
+function refresh(callback){
+    myChart.setOption(option);
+    setTimeout(function(){
+        if(callback)callback();
+    },0)
+}
+</script>
+</body>
+</html>

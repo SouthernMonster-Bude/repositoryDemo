@@ -21,7 +21,7 @@ public class JDBCDemo {
     public void testTransactionDemo(){
         ApplicationContext ac = new ClassPathXmlApplicationContext("conf/spring/jdbc.conf.xml");
         IUserService userService = (IUserService)ac.getBean("userService");
-//        userService.save();
+        userService.save();
     }
     @Test
     public void testQueryDemo(){
