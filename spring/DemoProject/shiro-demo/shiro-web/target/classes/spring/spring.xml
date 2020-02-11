@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/mvc
+           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--    数据库spring配置-->
+    <import resource="spring-dao.xml"/>
+    <!--    redisSpring配置-->
+    <import resource="spring-jedis.xml"/>
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="login.html"/>
+        <property name="unauthorizedUrl" value="403.html"/>
+        <!-- authc 需要认证-->
+        <!-- anon 不需要认证-->
+        <property name="filterChainDefinitions" >
+            <value>
+                /login.html = anon
+                /user/hello = anon
+                /user/sublogin = anon
+                /user/testRolesAdmin = rolesOrFilter["admin0"]
+<!--                /user/testRolesAdmin = roles["admin"]-->
+<!--                /user/testPerms = perms["user:delete"]-->
+<!--                /* = authc-->
+            </value>
+        </property>
+        <property name="filters">
+            <map>
+                <entry key="rolesOrFilter" value-ref="rolesOrFilter"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="rolesOrFilter" class="o.h.j.m.filter.RolesOrFilter"/>
+
+<!--    创建SecurityManager对象-->
+    <bean class="org.apache.shiro.web.mgt.DefaultWebSecurityManager"
+          id = "securityManager">
+        <property name="realm" ref="myDataBaseRealm"/>
+        <property name="sessionManager" ref="sessionManager"/>
+        <property name="cacheManager" ref="redisCacheMananger"/>
+        <property name="rememberMeManager" ref="cookieRememberMeManager"/>
+    </bean>
+    <bean id="myRealm" class="o.h.j.m.shiro.realm.MyRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+    <bean id="myDataBaseRealm" class="o.h.j.m.shiro.realm.MyDataBaseRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+    <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher"
+          id="credentialsMatcher">
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="1"/>
+    </bean>
+
+    <!--    自定义sessionDAO-->
+    <!--    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">-->
+    <bean id="sessionManager" class="o.h.j.m.session.CustomerSessionManager">
+        <property name="sessionDAO" ref="redisSessionDao"/>
+    </bean>
+    <bean id="redisSessionDao" class="o.h.j.m.session.RedisSessionDao"/>
+    <!--创建redisCacheMananger对象-->
+    <bean id="redisCacheMananger" class="o.h.j.m.cache.RedisCacheManager">
+
+    </bean>
+    <!--rememberMeManager设置-->
+    <bean id="cookieRememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="cookie"/>
+    </bean>
+    <bean id="cookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <property name="maxAge" value="2000000"/>
+    </bean>
+</beans>
