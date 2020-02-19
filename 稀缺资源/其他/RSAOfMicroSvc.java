@@ -99,16 +99,16 @@ public class RSAOfMicroSvc {
 	}
 	public static void main(String[] args) throws Exception {
 		String enc = encryptByPublicKeySN("APPID-XXXXX-XXXXXXXX");
-		System.out.println("苏宁公钥加密串:" + enc);
+		System.out.println("甲方公钥加密串:" + enc);
 		System.out.println("result=" + URLEncoder.encode(enc, "utf-8"));
 		String dec = decryptByPrivateKeySN(enc);
-		System.out.println("苏宁私钥解密串:" + dec);
+		System.out.println("甲方私钥解密串:" + dec);
 
 		enc = encryptByPublicKeyGTJA(dec);
-		System.out.println("国泰公钥加密串:" + enc);
+		System.out.println("公司公钥加密串:" + enc);
 		System.out.println("result=" + URLEncoder.encode(enc, "utf-8"));
 		dec = decryptByPrivateKeyGTJA(enc);
-		System.out.println("国泰私钥解密串:" + dec);
+		System.out.println("公司私钥解密串:" + dec);
 	}
 	public static void _main(String[] args) throws Exception {
 		initKey();

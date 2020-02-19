@@ -1,0 +1,9 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /demo
+
+limit:
+  minMoney: 1
+  maxMoney: 1000
+  description: 最少发${limit.minMoney}块钱,最多发${limit.maxMoney}块钱
