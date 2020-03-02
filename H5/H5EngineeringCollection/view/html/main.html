@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=YhgdX9V4DTAIepL8XHcMFkVYEvd4zzkv"></script>
+</head>
+
+<body class="scroll"></body>
+    
+
+<script>
+    let chinaData = {};
+    let cityData = {};
+    let geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition((res)=>{
+        console.log("GPS")
+        let city = res.address.city;
+        let province = res.address.province;
+        console.log(city,province)
+    })
+</script>
+
+</html>
