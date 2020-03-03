@@ -3,33 +3,38 @@ package com.hjm.test;
 import org.junit.Test;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 
 public class TestProgram03 {
 
 
 
-
+//改良版
+    @Test
+    public void test02() {
+        String regex = "\\b(\\w+)(?:\\W+\\1\\b)+";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        String input = "Goodbye bye bye world world world";
+        Matcher m = p.matcher(input);
+        List<String> sList = new ArrayList<String>();
+        while(m.find()){
+            input = input.replaceAll(m.group(),m.group(1));
+            System.out.println(m.group());
+        }
+        System.out.println("Out: " + input);
+    }
     @Test
     public void test01() {
         String regex = "\\w+";
         Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        String input = "I love Love to To tO code";
-//        String input = "Goodbye bye bye world world world";
+        String input = "Goodbye bye bye world world world";
         Matcher m = p.matcher(input);
-//        while (m.find()) {
-//            input = input.replaceAll("to","");
-//        }
         List<String> sList = new ArrayList<String>();
         while(m.find()){
             String strs = m.group();
             if(sList.indexOf(strs.toLowerCase())>-1){
-                //(?<=#).*?(?=</td>)
-                input = input.replaceAll("(?<!\\w)"+strs+"(?!\\w)\\s*","");
+                input = input.replaceFirst("(?<!\\w)"+strs+"(?!\\w)\\s*","");
             }else{
                 sList.add(strs.toLowerCase());
             }

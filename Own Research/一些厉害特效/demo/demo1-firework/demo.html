@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        .background{
+            background-color: black;
+            width: 300px;
+            height: 300px;
+        }
+        .firework{
+            background-image: url("img/001.png");
+            width: 206px;
+            height: 204px;
+            transform: scale(1);
+            animation: boom 1.6s infinite;
+            
+        }
+        @keyframes boom {
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+            }
+
+        }
+        .firework1{
+            background-image: url("img/001.png");
+            width: 206px;
+            height: 204px;
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+    </style>
 </head>
 <body>
+    <div class="background">
+
+        <div class="firework">
+        
+        </div>
+        <!-- <div class="firework1">
+        
+        </div> -->
+    </div>
+
 <script>
-import 'js/firework.js'
     
 </script>
 </body>
