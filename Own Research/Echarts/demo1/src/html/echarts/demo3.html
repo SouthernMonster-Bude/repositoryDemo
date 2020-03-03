@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ECharts</title>
+    <script src="../../common/js/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:300px;"></div>
+  
+<script src="js/option-demo3.js"></script>
+<script>
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
+</body>
+</html>

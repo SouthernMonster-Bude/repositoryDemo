@@ -1,0 +1,3 @@
+spring:
+  profiles:
+    active: dev  #使用开发环境的yml配置
