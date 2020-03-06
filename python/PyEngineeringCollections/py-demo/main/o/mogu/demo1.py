@@ -40,6 +40,6 @@ r.raise_for_status()
 r.encoding = r.apparent_encoding
 resDict = r.json()
 resList = resDict['content']['list']
-filename = '蘑菇租房数据.json'
+filename = 'py-demo/main/o/mogu/蘑菇租房数据.json'
 fp = open(filename, 'w', encoding='utf-8')
 print(json.dump(resList, fp, indent=4, ensure_ascii=False))

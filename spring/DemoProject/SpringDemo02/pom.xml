@@ -68,14 +68,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.0.5</version>
         </dependency>
-<<<<<<< HEAD
-
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-            <version>1.2.4</version>
-        </dependency>
-=======
 <!--数据源-->
 <dependency>
     <groupId>com.alibaba</groupId>
@@ -87,22 +79,22 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
-            <version>1.3.2</version>
+            <version>1.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-web</artifactId>
-            <version>1.3.2</version>
+            <version>1.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-cas</artifactId>
-            <version>1.3.2</version>
+            <version>1.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
-            <version>1.3.2</version>
+            <version>1.4.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
@@ -113,6 +105,5 @@
         </dependency>
 
 
->>>>>>> 22011812a13463f7bd853cf2e678047c2ce669c1
     </dependencies>
 </project>

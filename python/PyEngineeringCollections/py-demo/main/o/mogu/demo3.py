@@ -47,7 +47,7 @@ def calTime(point):
 
 if __name__ == '__main__':
     content = ''
-    with open('蘑菇租房数据.json', encoding='utf-8') as file:
+    with open('py-demo/main/o/mogu/蘑菇租房数据.json', encoding='utf-8') as file:
         content = file.read()
         file.close()
     reslist = []
@@ -59,6 +59,6 @@ if __name__ == '__main__':
         rate = 0.7
         point['suggestion'] = 1.0 / (float(point['price']) * rate) / (float(point['expensetime']) * (1 - rate))
         reslist.append(point)
-    filename = '距离和价格.json'
+    filename = 'py-demo/main/o/mogu/距离和价格.json'
     fp = open(filename, 'w', encoding='utf-8')
     print(json.dump(reslist, fp, indent=4, ensure_ascii=False))

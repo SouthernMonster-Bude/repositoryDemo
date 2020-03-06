@@ -1,6 +1,6 @@
 import json
 content = ''
-with open('蘑菇租房数据.json', encoding='utf-8') as file:
+with open('py-demo/main/o/mogu/蘑菇租房数据.json', encoding='utf-8') as file:
     content = file.read()
     # print(content)
     # print(type(content))

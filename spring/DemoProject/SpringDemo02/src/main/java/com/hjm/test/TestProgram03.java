@@ -60,4 +60,17 @@ public class TestProgram03 {
         System.out.println("China: " + china);
         System.out.println("France: " + france);
     }
+    @Test
+    public void test04() {
+        String regex = "UUID:\\w+;";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        String input = "jkhhjk;jkl;UUID:;kjnjkdnf;";
+        Matcher m = p.matcher(input);
+        while(m.find()){
+            String strs = m.group();
+            System.out.println(m.group());
+        }
+        System.out.println("Out: " + input);
+    }
+
 }

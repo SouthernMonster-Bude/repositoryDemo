@@ -8,10 +8,10 @@ with open(filename, 'w') as file_object:
 
 filename = 'test_text.txt'
 with open(filename, 'w') as file_object:
-    file_object.write("Add a word\n")
-    file_object.write("Add two words\n")
+    file_object.write("Add a word/n")
+    file_object.write("Add two words/n")
 # 在原有文件上添加内容
 filename = 'test_text.txt'
 with open(filename, 'a') as file_object:
-    file_object.write("lalala\n")
-    file_object.write("hahaha\n")
+    file_object.write("lalala/n")
+    file_object.write("hahaha/n")

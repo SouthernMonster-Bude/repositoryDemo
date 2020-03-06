@@ -1,7 +1,7 @@
 import json
 
 content = ''
-with open('距离和价格.json', encoding='utf-8') as file:
+with open('py-demo/main/o/mogu/距离和价格.json', encoding='utf-8') as file:
     content = file.read()
     # print(content)
     # print(type(content))
@@ -13,7 +13,7 @@ list = json.loads(content)
 
 for point in list:
     # point['suggestion'] = int(point['suggestion'] * 10 ** 7)
-    rate = 0.3;
+    rate = 0.3
     overprice = (float(point['price']) - 3500) ** 1.5 + 100
     overtime = (float(point['expensetime']) - 30)
     point['suggestion'] = (overprice * overtime)
