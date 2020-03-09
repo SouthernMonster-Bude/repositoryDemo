@@ -11,8 +11,8 @@ if __name__ == '__main__':
     # 移动窗口
     w.move(300, 300)
     # 设置标题
-    w.setWindowTitle('第一个基于PyQt5的桌面应用')
-    # 显示 默认情况下不会展示
+    w.setWindowTitle('第一个基于PyQt5的左面应用')
+    # 显示
     w.show()
     # 进入程序的主循环、并通过exit函数确保主循环安全结束
     sys.exit(app.exec_())

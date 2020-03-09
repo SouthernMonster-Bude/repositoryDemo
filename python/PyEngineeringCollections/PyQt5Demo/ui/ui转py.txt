@@ -1,0 +1,11 @@
+IDEA中
+$FileDir$表示当前选中的目录
+$PIPENV_VENV_IN_PROJECT$表示项目目录
+
+ui文件转py文件
+方法一：
+python -m PyQt5.uic.pyuic \first.ui -o \first.py
+# IDEA中的配置 -m PyQt5.uic.pyuic $FileName$ -o $FileNameWithoutExtension$.py
+方法二：
+pyuic5 \first.ui -o \first.py
+# IDEA中的配置 pyuic5 $FileName$ -o $FileNameWithoutExtension$.py
