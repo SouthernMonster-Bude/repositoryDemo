@@ -1,0 +1,16 @@
+person:
+  name: maggey@hotmail.com
+  age: ${random.int}
+  birth: 2019/09/12
+  map: {nn: dsd,k2: sd}
+  list:
+    - sdjker
+    - jhjj
+    - 434
+  dog:
+    name: jack_${person.name}
+    age: 6
+
+dog:
+  first-name: 大黄
+  age: 10
