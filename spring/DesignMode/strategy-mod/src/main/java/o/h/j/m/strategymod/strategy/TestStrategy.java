@@ -1,6 +1,7 @@
-package o.h.j.m.strategymod.m.strategy;
+package o.h.j.m.strategymod.strategy;
 
-import o.h.j.m.strategy.context.StrategyContext;
+import o.h.j.m.strategymod.strategy.context.StrategyContext;
+
 //标准的策略模式
 public class TestStrategy {
     public static void main(String[] args) {

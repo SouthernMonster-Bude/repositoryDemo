@@ -1,6 +1,8 @@
-package o.h.j.m.mode.decorator;
+package o.h.j.m.mode.decorator.coffee;
 
-public class Espresso extends Coffee{
+import o.h.j.m.mode.decorator.Coffee;
+
+public class Espresso extends Coffee {
     public Espresso(){
         setDes("意式咖啡");
         setPrice(9);

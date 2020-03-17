@@ -1,4 +1,4 @@
-package o.h.j.m.strategymod.m.pay.type;
+package o.h.j.m.strategymod.pay.type;
 
 public enum PayType {
     ALIPAY,WXPAY,ZHPAY

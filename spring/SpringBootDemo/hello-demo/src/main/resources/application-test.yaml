@@ -1,3 +1,4 @@
+
 person:
   name: maggey@hotmail.com
   age: ${random.int}
@@ -14,3 +15,5 @@ person:
 dog:
   first-name: 大黄
   age: 10
+server:
+  port: 8081

@@ -1,5 +1,10 @@
-package com.hjm;
+package com.hjm.singleResponsibility;
 
+/**
+ * 1) 降低类的复杂度，一个类只负责一项职责。
+ * 2) 提高类的可读性，可维护性
+ * 3) 降低变更引起的风险
+ */
 public class SingleResponsibility {
     public static void main(String[] args) {
         Vehicle vehicle = new Vehicle();

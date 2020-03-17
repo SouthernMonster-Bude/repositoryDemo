@@ -1,8 +1,8 @@
 package o.h.j.m.mode.factory.pizza;
 
-public class LDNLPizza extends Pizza{
+public class LDHJPizza extends Pizza{
     @Override
     public void prepare() {
-        setName("北京奶酪披萨");
+        setName("伦敦胡椒披萨");
     }
 }

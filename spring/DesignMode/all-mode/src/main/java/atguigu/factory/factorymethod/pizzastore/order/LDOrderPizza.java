@@ -1,10 +1,10 @@
 package atguigu.factory.factorymethod.pizzastore.order;
 
-import com.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;
-import com.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;
-import com.atguigu.factory.factorymethod.pizzastore.pizza.LDCheesePizza;
-import com.atguigu.factory.factorymethod.pizzastore.pizza.LDPepperPizza;
-import com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;
+import atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;
+import atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;
+import atguigu.factory.factorymethod.pizzastore.pizza.LDCheesePizza;
+import atguigu.factory.factorymethod.pizzastore.pizza.LDPepperPizza;
+import atguigu.factory.factorymethod.pizzastore.pizza.Pizza;
 
 
 public class LDOrderPizza extends OrderPizza {

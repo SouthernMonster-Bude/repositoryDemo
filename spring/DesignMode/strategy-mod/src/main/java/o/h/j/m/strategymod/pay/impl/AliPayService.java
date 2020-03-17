@@ -1,7 +1,7 @@
-package o.h.j.m.strategymod.m.pay.impl;
+package o.h.j.m.strategymod.pay.impl;
 
-import o.h.j.m.strategymod.m.pay.IPayService;
-import o.h.j.m.strategymod.m.pay.type.PayType;
+import o.h.j.m.strategymod.pay.IPayService;
+import o.h.j.m.strategymod.pay.type.PayType;
 import org.springframework.stereotype.Component;
 
 @Component

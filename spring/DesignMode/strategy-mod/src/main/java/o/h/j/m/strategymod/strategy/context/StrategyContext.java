@@ -1,6 +1,8 @@
-package o.h.j.m.strategymod.m.strategy.context;
+package o.h.j.m.strategymod.strategy.context;
 
-import o.h.j.m.strategy.IStrategy;
+import o.h.j.m.strategymod.strategy.IStrategy;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.HandlerAdapter;
 
 public class StrategyContext {
 
@@ -12,4 +14,7 @@ public class StrategyContext {
         System.out.println("StrategyContext contextMethod executed...");
         strategy.strategyMethod();
     }
+//    HandlerAdapter
+    DispatcherServlet
 }
+

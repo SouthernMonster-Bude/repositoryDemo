@@ -1,6 +1,8 @@
-package o.h.j.m.mode.decorator;
+package o.h.j.m.mode.decorator.coffee;
 
-public class LongBlack extends Coffee{
+import o.h.j.m.mode.decorator.Coffee;
+
+public class LongBlack extends Coffee {
     public LongBlack(){
         setDes("长夜朗咖啡");
         setPrice(11);

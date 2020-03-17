@@ -1,6 +1,6 @@
 package o.h.j.m.mode.builder;
 
-public class HighBuilding extends AbsHouseBuilder{
+public class HighBuildingBuilder extends AbsHouseBuilder{
 
     @Override
     public void buildBasic() {

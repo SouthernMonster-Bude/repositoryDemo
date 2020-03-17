@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;
+import atguigu.factory.absfactory.pizzastore.pizza.Pizza;
 
 public class OrderPizza {
 

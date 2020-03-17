@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-public class DeepProtoType implements Serializable, Cloneable{
+public class  DeepProtoType implements Serializable, Cloneable{
 	
 	public String name; //String 属性
 	public DeepCloneableTarget deepCloneableTarget;// 引用类型

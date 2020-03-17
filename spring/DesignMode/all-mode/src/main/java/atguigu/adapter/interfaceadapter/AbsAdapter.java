@@ -19,4 +19,5 @@ public abstract class AbsAdapter implements Interface4 {
 	public void m4() {
 
 	}
+	
 }

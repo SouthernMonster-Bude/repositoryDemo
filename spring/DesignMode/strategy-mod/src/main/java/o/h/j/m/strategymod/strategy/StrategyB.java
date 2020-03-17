@@ -1,4 +1,4 @@
-package o.h.j.m.strategymod.m.strategy;
+package o.h.j.m.strategymod.strategy;
 
 public class StrategyB implements IStrategy{
     @Override

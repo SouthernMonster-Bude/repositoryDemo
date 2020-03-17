@@ -1,0 +1,26 @@
+spring:
+  devtools:
+    restart:
+      enabled: true  #\u8BBE\u7F6E\u5F00\u542F\u70ED\u90E8\u7F72
+      additional-paths: src/main/java #\u91CD\u542F\u76EE\u5F55
+      exclude: WEB-INF/**
+  ########################################################
+  ###FREEMARKER (FreeMarkerAutoConfiguration)
+  ########################################################
+  freemarker:
+    allow-request-override: false
+    suffix: .html
+    cache: false
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    template-loader-path: classpath:/templates/
+
+  mvc:
+    date-format: yyyy-mm-dd
+  messages:
+    basename: /i18n/login
+#    static-path-pattern: /static/**
+#debug: true

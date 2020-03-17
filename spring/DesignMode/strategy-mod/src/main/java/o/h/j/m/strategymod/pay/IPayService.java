@@ -1,8 +1,8 @@
-package o.h.j.m.strategymod.m.pay;
+package o.h.j.m.strategymod.pay;
 
-import o.h.j.m.strategymod.m.pay.type.PayType;
+import o.h.j.m.strategymod.pay.type.PayType;
 
 public interface IPayService {
-    public PayType payType();
+    PayType payType();
     void pay();
 }

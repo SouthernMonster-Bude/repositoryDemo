@@ -1,6 +1,11 @@
-package o.h.j.m.mode.factory.pizza;
+package o.h.j.m.mode.factory.factory;
 
-public class BJPizzaFactory extends PizzaFactory{
+import o.h.j.m.mode.factory.factory.PizzaFactory;
+import o.h.j.m.mode.factory.pizza.BLHJPizza;
+import o.h.j.m.mode.factory.pizza.BLNLPizza;
+import o.h.j.m.mode.factory.pizza.Pizza;
+
+public class BJPizzaFactory extends PizzaFactory {
     @Override
     public Pizza makePizza(String ptype) {
         Pizza pizza = null;

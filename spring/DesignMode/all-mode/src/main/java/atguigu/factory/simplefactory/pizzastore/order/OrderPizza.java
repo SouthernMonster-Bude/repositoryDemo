@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-import com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
+import atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
 
 public class OrderPizza {
 

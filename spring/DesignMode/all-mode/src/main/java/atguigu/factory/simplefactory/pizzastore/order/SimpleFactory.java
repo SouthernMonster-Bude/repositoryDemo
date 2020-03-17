@@ -1,9 +1,9 @@
 package atguigu.factory.simplefactory.pizzastore.order;
 
-import com.atguigu.factory.simplefactory.pizzastore.pizza.CheesePizza;
-import com.atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;
-import com.atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;
-import com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
+import atguigu.factory.simplefactory.pizzastore.pizza.CheesePizza;
+import atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;
+import atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;
+import atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
 
 //简单工厂类
 public class SimpleFactory {

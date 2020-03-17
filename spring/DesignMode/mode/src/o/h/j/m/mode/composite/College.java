@@ -3,9 +3,9 @@ package o.h.j.m.mode.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class University extends OrganizationComponent{
+public class College extends OrganizationComponent{
     List<OrganizationComponent> components = new ArrayList<OrganizationComponent>();
-    public University(String name,String des){
+    public College(String name, String des){
         super(name,des);
     }
     @Override
