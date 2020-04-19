@@ -27,12 +27,16 @@ data = {
     'ad2': '310000'
 }
 
+HCpos = {"x":"121.384643","y":"31.166469","name":"HC"}
+LZpos = {"x":"121.389969","y":"31.26902","name":"LZY"}
 
-def calTime(point):
+def calTime(point,tPoint):
     time.sleep(0.1)
     url = 'https://www.amap.com/service/nav/bus?'
     data['x1'] = str(point['x'])
     data['y1'] = str(point['y'])
+    data['x2'] = str(tPoint['x'])
+    data['y2'] = str(tPoint['y'])
     for (k, v) in data.items():
         url += '&' + k + '=' + v
     r = requests.get(url, headers=headers)
@@ -47,7 +51,7 @@ def calTime(point):
 
 if __name__ == '__main__':
     content = ''
-    with open('py-demo/main/o/mogu/蘑菇租房数据.json', encoding='utf-8') as file:
+    with open('蘑菇租房数据new.json', encoding='utf-8') as file:
         content = file.read()
         file.close()
     reslist = []
@@ -55,10 +59,10 @@ if __name__ == '__main__':
     # p = list[0]
     for p in list:
         point = {'y': p['lat'], 'x': p['lng'], 'name': p['name'], 'price': p['minPrice']}
-        point = calTime(point)
+        point = calTime(point,HCpos)
         rate = 0.7
         point['suggestion'] = 1.0 / (float(point['price']) * rate) / (float(point['expensetime']) * (1 - rate))
         reslist.append(point)
-    filename = 'py-demo/main/o/mogu/距离和价格.json'
+    filename = '距离和价格Final.json'
     fp = open(filename, 'w', encoding='utf-8')
     print(json.dump(reslist, fp, indent=4, ensure_ascii=False))

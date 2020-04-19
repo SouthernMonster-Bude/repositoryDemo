@@ -1,3 +1,5 @@
+package h.j.m.t1.JUC;
+
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
@@ -12,10 +14,11 @@ public class SemaphoreDemo {
                 try{
                     semaphore.acquire();
                     System.out.println(Thread.currentThread().getName()+"\t抢到车位");
+                    long time = 2+(long)(Math.random()*5);
                     try{
-                        TimeUnit.SECONDS.sleep(3);
+                        TimeUnit.SECONDS.sleep(time);
                     } catch (InterruptedException e) {e.printStackTrace();}
-                    System.out.println(Thread.currentThread().getName()+"\t停车3秒后离开车位");
+                    System.out.println(Thread.currentThread().getName()+"\t停车"+time+"秒后离开车位");
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 } finally {

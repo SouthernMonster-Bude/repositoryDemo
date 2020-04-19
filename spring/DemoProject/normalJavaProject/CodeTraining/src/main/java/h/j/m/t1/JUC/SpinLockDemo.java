@@ -1,3 +1,5 @@
+package h.j.m.t1.JUC;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -15,6 +17,7 @@ public class SpinLockDemo {
         while(!atomicReference.compareAndSet(null,thread)){
 
         }
+        System.out.println(Thread.currentThread().getName()+"\t come out ");
     }
 
     public void myUnLock(){

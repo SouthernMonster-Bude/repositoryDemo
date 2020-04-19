@@ -1,3 +1,5 @@
+package h.j.m.t1.JUC;
+
 import java.lang.ref.WeakReference;
 
 public class WeakReferenceDemo {

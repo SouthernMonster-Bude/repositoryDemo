@@ -1,3 +1,4 @@
+package h.j.m.t1.JUC;
 
 public class SingletonDemo {
     private static SingletonDemo instance = null;

@@ -1,4 +1,4 @@
-/*
+package h.j.m.t1.JUC;/*
 *第4种获得/使用java多线程的方式，通过线程池
 * （其他三种是：继承Thread类；实现Runnable接口，但是Runnable没有返回值，不抛异常；
 * 实现Callable接口，有返回值，会跑出异常）

@@ -1,6 +1,9 @@
+package h.j.m.t1.JUC;
+
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 /*
 * ArrayBlockingQueue:是一个基于数组结构的有界阻塞队列，此队列按FIFO原则对元素进行排序
@@ -28,6 +31,15 @@ public class BlockingQueueDemo {
 
         System.out.println(blockingQueue.remove());
         System.out.println(blockingQueue.remove());
+        new Thread(()->{
+            try {
 
+
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName()+" mission done！");
+        },"Thread-name").start();
     }
 }

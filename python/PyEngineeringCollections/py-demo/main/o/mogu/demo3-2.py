@@ -9,7 +9,8 @@ headers = {
     'Postman-Token': '12a1e0da-8655-4caa-b9e1-e52d878ae256',
     # 'Host':'api.mgzf.com',
     'Accept-Encoding': 'gzip, deflate, br',
-    'Connection': 'keep-alive'
+    'Connection': 'keep-alive',
+    'Set-Cookie': 'acw_tc=2760829115861608631393981ec12d2d52bae3a303d55234899e359a782480;path=/;HttpOnly;Max-Age=2678401'
 }
 data = {
     'night': '1',
@@ -27,10 +28,12 @@ data = {
     'ad2': '310000'
 }
 
-HCpos = {"x":"121.384643","y":"31.166469","name":"HC"}
-LZpos = {"x":"121.389969","y":"31.26902","name":"LZY"}
+HCpos = {"x": "121.384643", "y": "31.166469", "name": "HC"}
+LZpos = {"x": "121.389969", "y": "31.26902", "name": "LZY"}
+JDGpos = {"x": "121.635386", "y": "31.223028", "name": "JDG"}
 
-def calTime(point,tPoint):
+
+def calTime(point, tPoint):
     time.sleep(0.1)
     url = 'https://www.amap.com/service/nav/bus?'
     data['x1'] = str(point['x'])
@@ -43,8 +46,19 @@ def calTime(point,tPoint):
     r.raise_for_status()
     r.encoding = r.apparent_encoding
     resDict = r.json()
-    expensetime = resDict['data']['buslist'][0]['expensetime']
-    point['expensetime'] = float(expensetime) / 60.0
+    result = 0
+    try:
+        expensetime = resDict['data']['buslist'][0]['expensetime']
+        result = round(float(expensetime) / 60.0)
+    except KeyError as e:
+        result = 6000000000
+        pass
+    except ValueError:
+        print("expensetime"+str(expensetime))
+        result = 6000000000
+        print(type(expensetime))
+        pass
+    point['expensetime-' + tPoint['name']] = result
     print(point)
     return point
 
@@ -59,9 +73,13 @@ if __name__ == '__main__':
     # p = list[0]
     for p in list:
         point = {'y': p['lat'], 'x': p['lng'], 'name': p['name'], 'price': p['minPrice']}
-        point = calTime(point,HCpos)
+        point = calTime(point, HCpos)
+        # time.sleep(0.1)
+        point = calTime(point, LZpos)
+        # time.sleep(0.1)
+        point = calTime(point, JDGpos)
         rate = 0.7
-        point['suggestion'] = 1.0 / (float(point['price']) * rate) / (float(point['expensetime']) * (1 - rate))
+        # point['suggestion'] = 1.0 / (float(point['price']) * rate) / (float(point['expensetime']) * (1 - rate))
         reslist.append(point)
     filename = '距离和价格Final.json'
     fp = open(filename, 'w', encoding='utf-8')

@@ -1,4 +1,4 @@
-package com.atguigu.newinterface;
+package h.j.m.t1.java8.newinterface;
 /*
  * 1.jdk 8 可以额外定义静态方法和默认方法 (静态方法和默认都有方法体)
  * 

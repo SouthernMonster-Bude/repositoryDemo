@@ -1,3 +1,5 @@
+package h.j.m.t1.JUC;
+
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.WeakHashMap;

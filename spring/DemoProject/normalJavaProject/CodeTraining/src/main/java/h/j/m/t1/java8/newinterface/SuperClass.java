@@ -1,4 +1,4 @@
-package com.atguigu.newinterface;
+package h.j.m.t1.java8.newinterface;
 
 public class SuperClass {
 	

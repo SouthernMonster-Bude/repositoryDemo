@@ -1,4 +1,4 @@
-package com.atguigu.annotation;
+package h.j.m.t1.java8.annotation;
 
 import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;

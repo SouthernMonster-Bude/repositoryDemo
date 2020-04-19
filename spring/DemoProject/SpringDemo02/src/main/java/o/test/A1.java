@@ -9,7 +9,7 @@ public class A1 {
             }
         }
 
-class B extends A1 {
+class B1 extends A1 {
             static {
                 System.out.println("Class B static");
             }
@@ -18,9 +18,9 @@ class B extends A1 {
             }
 
             public static void main(String[] args) {
-                A a=new A();
+                A1 a=new A1();
                 a.show();
-                A b=new B();
+                A1 b=new B1();
                 b.show();
             }
         }

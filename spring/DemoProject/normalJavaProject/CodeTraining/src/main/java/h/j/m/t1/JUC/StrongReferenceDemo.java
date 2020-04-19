@@ -1,3 +1,5 @@
+package h.j.m.t1.JUC;
+
 public class StrongReferenceDemo {
     public static void main(String[] args){
         Object obj1 = new Object();//这样定义默认的就是强引用

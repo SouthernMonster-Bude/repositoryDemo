@@ -1,4 +1,4 @@
-///*
+package h.j.m.t1.java8.src7;///*
 // * Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
 // * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 // *

@@ -1,4 +1,4 @@
-package com.atguigu.stream;
+package h.j.m.t1.java8.stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
 
+import h.j.m.t1.java8.lambda.Employee;
+import h.j.m.t1.java8.lambda.EmployeeData;
 import org.junit.Test;
 
-import com.atguigu.lambda.Employee;
-import com.atguigu.lambda.EmployeeData;
 
 /**
  * 测试中间操作

@@ -1,4 +1,4 @@
-
+package h.j.m.t1.JUC;
 /*
 * Java8之后的版本使用Metaspace来替代永久代
 * Metaspace是方法区在HotSpot中的实现，它与持久带最大的区别在于：Metaspace并不在虚拟机内存中而是使用

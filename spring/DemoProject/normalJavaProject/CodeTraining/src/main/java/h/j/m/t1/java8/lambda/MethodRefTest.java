@@ -1,4 +1,4 @@
-package com.atguigu.lambda;
+package h.j.m.t1.java8.lambda;
 
 import org.junit.Test;
 

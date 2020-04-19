@@ -1,4 +1,4 @@
-package com.atguigu.annotation;
+package h.j.m.t1.java8.annotation;
 
 import static java.lang.annotation.ElementType.CONSTRUCTOR;
 import static java.lang.annotation.ElementType.FIELD;

@@ -14,19 +14,11 @@ def saveIntoFileByJson(filename,content):
     json.dump(content, fp, indent=4, ensure_ascii=False)
 
 if __name__ == '__main__':
-    content = getFileContent("./subway.json")
-    c_map = json.loads(content)
-    subwayList = c_map['l']
-    outputList = []
+    content = getFileContent("./subway-stations.json")
+    subwayList = json.loads(content)
+    allStationsSet=set()
     for subway in subwayList:
-        sub = {}
-        sub['name'] = subway['kn']
-        stations = []
-        for st in subway['st']:
-            stPos = st['sl'].split(',')
-            stPos.append(st['n'])
-            stations.append(stPos)
-        sub['stations']=stations
-        outputList.append(sub)
+        for st in subway['stations']:
+            allStationsSet.add(tuple(st))
 
-    saveIntoFileByJson('subway-stations.json',outputList)
+    saveIntoFileByJson('subway-all-stations.json',list(allStationsSet))

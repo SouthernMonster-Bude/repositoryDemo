@@ -3,7 +3,7 @@ package h.j.m.t1;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 public class Test1 {
    // @Test
@@ -15,6 +15,25 @@ public class Test1 {
         System.out.println("begin:"+begin+",end:"+end);
         System.out.println("now:"+now);
         System.out.println("result:"+(begin<=now && now <=end));
+    }
+    @Test
+    public void testIntegerEqual() {
+        /** -128~127 之外的数**/
+        Integer tem = 129;
+        Integer tem1 = 129;
+        System.out.println(tem == tem1); // false
+        System.out.println(tem.equals(tem1)); // true
+        /** -128~127之内的数 **/
+        Integer tem2 = 127;
+        Integer tem3 = 127;
+        System.out.println(tem2 == tem3);//true
+//        Properties
+//        HashSet
+//        HashMap
+//        Hashtable
+
+
+
     }
 
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package com.atguigu.stream;
+package h.j.m.t1.java8.stream;
 
+import h.j.m.t1.java8.lambda.Employee;
+import h.j.m.t1.java8.lambda.EmployeeData;
 import org.junit.Test;
 
-import com.atguigu.lambda.Employee;
-import com.atguigu.lambda.EmployeeData;
 
 import java.util.Arrays;
 import java.util.List;
