@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>连线</title>
+</head>
+
+<body>
+    <canvas id="are" style="border:1px solid #000000;">
+    </canvas>
+</body>
+<script>
+    var element_width = 50;
+    var element_height = 50;
+    var shapes = {
+        "cycle": 0,
+        "triangle": 1,
+        "rectangle": 2
+    }
+    class point {
+        constructor(x, y, type) {
+            this.x = x;
+            this.y = y;
+            // 字段id
+            this.type = type;
+        }
+        copy() {
+            let p = new point(this.x, this.y, this.type);
+            return p;
+        }
+    }
+    class element {
+        constructor(id, name, x, y, shape, w, h, executeMethod) {
+            this.id = id;
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.shape = shape;
+            this.name = name;
+            this.executeMethod = executeMethod;
+            this.left = new point(x - element_width * 0.5, y, "left");
+            this.right = new point(x + element_width * 0.5, y, "left");
+        }
+        copy() {
+            let e = new element(this.id, this.x, this.y, this.shap, this.w, this.h);
+            return e;
+        }
+    }
+    class hop {
+        constructor(id, start, end) {
+            this.id = id;
+            this.start = start;
+            this.end = end;
+        }
+        copy() {
+            let h = new hop(this.id, this.start, this.end);
+            return h;
+        }
+    }
+    class executeMethod {
+        constructor(detail, foward, backword, deleted) {
+            this.detail = detail;
+            this.foward = foward;
+            this.backword = backword;
+            this.deleted = deleted;
+        }
+        exec(str, params) {
+            switch (str) {
+                case "detail": this.detail(params); break;
+                case "foward": this.foward(params); break;
+                case "backword": this.backword(params); break;
+                case "deleted": this.deleted(params); break;
+            }
+        }
+    }
+</script>
+
+<script>
+    // 获取canvas dom
+    let canvas = document.getElementById("are");
+    canvas.width = 1500;
+    canvas.height = 800;
+
+    let ctx = canvas.getContext("2d");
+    let width = canvas.width;
+    let height = canvas.height;
+    let gap = 60;
+
+    let srcElement = new element(0, "源表", 100, 300, shapes["rectangle"], 100, 50);
+    let tarElement = new element(1, "目标表", 1000, 300, shapes["rectangle"], 100, 50);
+    let srcColElements = [];
+    for (let i = 0; i < 10; i++) {
+        let srcColElement = new element(1, "原字段" + i, srcElement.x + gap * 4, srcElement.y + gap * (i - 4), shapes["rectangle"], 100, 50);
+        srcColElements.push(srcColElement);
+    }
+    let tarColElements = [];
+    for (let i = 0; i < 10; i++) {
+        let tarColElement = new element(1, "目标字段" + i, tarElement.x - gap * 4, tarElement.y + gap * (i - 4), shapes["rectangle"], 100, 50);
+        tarColElements.push(tarColElement);
+    }
+    let methodElements = [];
+    for (let i = 0; i < 10; i++) {
+        let methodElement = new element(1, "方法" + i, srcElement.x + gap * 8, srcElement.y + gap * (i - 4), shapes["rectangle"], 100, 50);
+        methodElements.push(methodElement);
+    }
+
+    let eles = [];
+    eles.push(srcElement);
+    eles.push(tarElement);
+
+    drawElements(eles.concat(srcColElements).concat(tarColElements).concat(methodElements));
+
+
+
+    function drawElements(eles) {
+        eles.forEach(ele => {
+            drawElement(ele);
+        });
+    }
+
+    function drawElement(ele) {
+        switch (ele.shape) {
+            case 0: break;
+            case 0: break;
+            case 2: drawElementRect(ele); break;
+        }
+
+    }
+    function drawElementRect(ele) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.strokeStyle = "gray"
+        ctx.fillStyle = "pink";
+        ctx.moveTo(ele.x - 0.5 * ele.w, ele.y - 0.5 * ele.h);
+        ctx.lineTo(ele.x + 0.5 * ele.w, ele.y - 0.5 * ele.h);
+        ctx.lineTo(ele.x + 0.5 * ele.w, ele.y + 0.5 * ele.h);
+        ctx.lineTo(ele.x - 0.5 * ele.w, ele.y + 0.5 * ele.h);
+        ctx.lineTo(ele.x - 0.5 * ele.w, ele.y - 0.5 * ele.h);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
+        
+        ctx.save();
+        ctx.fillStyle = "#fff";
+        ctx.font = "25px 微软雅黑";
+        ctx.fillText(ele.name, ele.x- 0.5 * ele.w, ele.y)
+        ctx.restore();
+    }
+
+
+
+    // 鼠标点击的时候
+    // canvas.addEventListener("mousedown", detect);
+    // // 鼠标抬起的时候
+    // canvas.addEventListener("mouseup", reset);
+    // // 鼠标移动的时候
+    // canvas.addEventListener("mousemove", dragLine);
+    // // 鼠标移动的时候
+    // canvas.addEventListener('dblclick', quitRels);
+
+    function redraw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawPoints(srcPoints.concat(tarPoints));
+        if (startP) drawPoint(startP);
+        if (endP) drawPoint(endP);
+        if (relList.length > 0) {
+            drawRelList(relList);
+        }
+    }
+
+    function drawPoints(ps) {
+        ps.forEach(p => {
+            drawPoint(p)
+        })
+    }
+
+    function drawPoint(p) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+    }
+
+    function drawLine(p1, p2) {
+        let pp1 = calLineHeadPoint(p1, p2);
+        let pp2 = calLineEndPoint(p1, p2);
+        drawArrow(ctx, pp1.x, pp1.y, pp2.x, pp2.y, 30, 15, 5, '#f36')
+
+    }
+    // 计算两点距离
+    function calDistance(p1, p2) {
+        return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5
+    }
+    function drawArrow(ctx, fromX, fromY, toX, toY, theta, headlen, width, color) {
+
+        theta = typeof (theta) != 'undefined' ? theta : 30;
+        headlen = typeof (theta) != 'undefined' ? headlen : 10;
+        width = typeof (width) != 'undefined' ? width : 1;
+        color = typeof (color) != 'color' ? color : '#000';
+
+        // 计算各角度和对应的P2,P3坐标
+        var angle = Math.atan2(fromY - toY, fromX - toX) * 180 / Math.PI,
+            angle1 = (angle + theta) * Math.PI / 180,
+            angle2 = (angle - theta) * Math.PI / 180,
+            topX = headlen * Math.cos(angle1),
+            topY = headlen * Math.sin(angle1),
+            botX = headlen * Math.cos(angle2),
+            botY = headlen * Math.sin(angle2);
+
+        ctx.save();
+        ctx.beginPath();
+
+        var arrowX = fromX - topX,
+            arrowY = fromY - topY;
+
+        ctx.moveTo(arrowX, arrowY);
+        ctx.moveTo(fromX, fromY);
+        ctx.lineTo(toX, toY);
+        arrowX = toX + topX;
+        arrowY = toY + topY;
+        ctx.moveTo(arrowX, arrowY);
+        ctx.lineTo(toX, toY);
+        arrowX = toX + botX;
+        arrowY = toY + botY;
+        ctx.lineTo(arrowX, arrowY);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.stroke();
+        ctx.restore();
+    }
+
+</script>
+
+</html>
