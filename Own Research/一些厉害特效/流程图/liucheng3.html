@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>连线</title>
+</head>
+
+<body>
+    <canvas id="are" style="border:1px solid #000000;">
+    </canvas>
+    <div style="visibility: false;">
+        <img id="icon-back" src="img\icon-back.png">
+        <img id="icon-close-0" src="img\icon-close-0.png">
+        <img id="icon-close-1" src="img\icon-close-1.png">
+        <img id="icon-info-0" src="img\icon-info-0.png">
+        <img id="icon-info-1" src="img\icon-info-1.png">
+        <img id="icon-forword" src="img\icon-forword.png">
+    </div>
+</body>
+<script src="canvasdraw.js">
+
+</script>
+
+<script>
+    // 获取canvas dom
+    let canvas = document.getElementById("are");
+    canvas.width = 1500;
+    canvas.height = 800;
+    const element_width = 150;
+    const element_height = 50;
+
+    let ctx = canvas.getContext("2d");
+    let width = canvas.width;
+    let height = canvas.height;
+    let gap = 60;
+    let srcElement = new element(0, "源表", 100, 300, tableShape, element_width, element_height);
+    let tarElement = new element(1, "目标表", 1000, 300, tableShape, element_width, element_height);
+    let srcColElements = [];
+    for (let i = 0; i < 10; i++) {
+        let srcColElement = new element(1, "原字段" + i, srcElement.x + gap * 4, srcElement.y + gap * (i - 4), fieldShape, element_width, element_height * 0.7);
+        srcColElements.push(srcColElement);
+    }
+    let tarColElements = [];
+    for (let i = 0; i < 10; i++) {
+        let tarColElement = new element(1, "目标字段" + i, tarElement.x - gap * 4, tarElement.y + gap * (i - 4), fieldShape, element_width, element_height * 0.7);
+        tarColElements.push(tarColElement);
+    }
+    let methodElements = [];
+    for (let i = 0; i < 10; i++) {
+        let methodElement = new element(1, "方法" + i, srcElement.x + gap * 8, srcElement.y + gap * (i - 4), methodShape, element_width, element_height * 0.7);
+        methodElements.push(methodElement);
+    }
+
+    let eles = [];
+    eles.push(srcElement);
+    eles.push(tarElement);
+    // var iconinfo0, iconinfo1, iconclose0, iconclose1, iconleft, iconright;
+
+    var iconinfo0 = document.getElementById('icon-info-0');
+    var iconinfo1 = document.getElementById('icon-info-1');
+    var iconclose0 = document.getElementById('icon-close-0');
+    var iconclose1 = document.getElementById('icon-close-1');
+    var iconleft = document.getElementById('icon-left');
+    var iconright = document.getElementById('icon-right');
+
+    // let imgs = ["img/icon-info-0.png", "img/icon-info-1.png", "img/icon-close-0.png",
+    //     "img/icon-close-1.png", "img/icon-back.png", "img/icon-forword.png"];
+    let imgs = [iconinfo0, iconinfo1, iconclose0, iconclose1, iconleft, iconright];
+    var count = 0;
+    for (let i = 0; i < imgs.length; i++) {
+        let im = new Image();
+        im.src = imgs[i].getAttribute("src");
+        im.onload = function () {
+            count++;
+            if (imgs.length == count) {
+                iconinfo0 = imgs[0];
+                iconinfo1 = imgs[1];
+                iconclose0 = imgs[2];
+                iconclose1 = imgs[3];
+                iconleft = imgs[4];
+                iconright = imgs[5];
+                console.log("图片加载完成00000");
+            }
+        }
+    }
+    window.onload = function () {
+        if (imgs.length == count) {
+            console.log("图片加载完成");
+            drawElements(ctx, eles.concat(srcColElements).concat(tarColElements).concat(methodElements));
+            // drawAddIcon(ctx,srcElement,1)
+            drawCloseIcon(ctx, srcElement, iconinfo0);
+            drawAddIcon(ctx, srcElement, iconinfo0);
+        } else {
+            console.log("图片未加载完成 1111");
+        }
+
+        setInterval(() => {
+            drawAddIcon(ctx, srcElement, iconinfo0);
+        }, 1000)
+
+    }
+</script>
+
+</html>

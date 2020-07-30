@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>连线</title>
+</head>
+
+<body>
+    <canvas id="are" style="border:1px solid #000000;">
+    </canvas>
+</body>
+<script src="canvasdraw.js">
+
+</script>
+
+<script>
+    init();
+
+    // 获取canvas dom
+    let canvas = document.getElementById("are");
+    let maxFieldNum = 10;
+
+    canvas.width = 1500;
+    canvas.height = 800;
+    const element_width = canvas.width / (7 + 2) * 0.7;
+    const element_height = canvas.height / (maxFieldNum + 2) * 0.7;
+
+
+    let ctx = canvas.getContext("2d");
+
+    window.onload = function () {
+
+        let width = canvas.width;
+        let height = canvas.height;
+        gap = element_height * 1.5;
+        let EleExec = createEleExecMethods();
+        let tarEleExec = createTarEleExecMethods();
+        EleExec.setThenFunc(redrawALl);
+        srcElement = new element(0, "源表", 100, 300, tableShape, element_width, element_height, EleExec, 3, 1);
+        tarElement = new element(1, "目标表", 1300, 300, tableShape, element_width, element_height, EleExec, 3, 7);
+        for (let i = 0; i < maxFieldNum; i++) {
+            let ro = i;
+            let co = 2;
+            let srcColElement = new element(i, "原字段" + i, srcElement.x + (element_width + gap) * co, srcElement.y + (gap) * (ro - srcElement.ro), srcFieldShape, element_width, element_height * 0.7, EleExec, ro, co);
+            srcColElements.push(srcColElement);
+        }
+        for (let i = 0; i < maxFieldNum; i++) {
+            let ro = i;
+            let co = 4;
+            let tarColElement = new element(i, "目标字段" + i, tarElement.x - element_width - gap, tarElement.y + gap * (i - 3), tarFieldShape, element_width, element_height * 0.7, tarEleExec, ro, co);
+            tarColElements.push(tarColElement);
+        }
+        let methodEleExec = createMethodEleExecMethods();
+        methodEleExec.setThenFunc(redrawALl);
+        for (let i = 0; i < tarColElements.length; i++) {
+            let ro = i;
+            let co = 3;
+            let methodElement = new element(i, "方法" + i, tarColElements[i].x - element_width - gap, tarColElements[i].y, methodShape, element_width, element_height * 0.7, methodEleExec, ro, tarColElements[i].co - 1);
+            methodElements.push(methodElement);
+            hops.push(lineElement(methodElement,tarColElements[i]));
+        }
+
+        eles.push(srcElement);
+        eles.push(tarElement);
+
+
+        srcColElements.forEach(col => {
+            let h = new hop(0, srcElement, col);
+            hops.push(h);
+        });
+        tarColElements.forEach(col => {
+            let h = new hop(0, col, tarElement);
+            hops.push(h);
+        });
+        let h1 = new hop(0, srcColElements[4], methodElements[0]);
+        hops.push(h1);
+
+
+
+
+        // 绘制
+        drawElements(ctx, eles.concat(srcColElements).concat(tarColElements).concat(methodElements));
+        drawHops(ctx, hops);
+        // 鼠标点击的时候
+        // canvas.addEventListener("mousedown", detect);
+        // // 鼠标抬起的时候
+        // canvas.addEventListener("mouseup", reset);
+        // 鼠标移动的时候
+        canvas.addEventListener("mousemove", mousemoveDetect);
+        // // 鼠标移动的时候
+        // canvas.addEventListener('dblclick', quitRels);
+        // // 鼠标移动的时候
+        canvas.addEventListener('click', mouseClickDetect);
+    }
+    function redrawALl() {
+        // console.log("redrawAll");
+        clean(ctx);
+        checkHops();
+        drawElements(ctx, eles.concat(srcColElements).concat(tarColElements).concat(methodElements));
+        drawHops(ctx, hops);
+    }
+    function checkHops() {
+        hops.forEach(h => {
+            if (!h.start.isAlive || !h.end.isAlive) {
+                h.isAlive = false;
+            }
+        });
+    }
+    function mousemoveDetect(event) {
+        var detectedArr = methodElements.concat(srcColElements).concat(tarColElements);
+        detectedArr.push(srcElement);
+        detectedArr.push(tarElement);
+        var x = event.clientX - canvas.getBoundingClientRect().left;
+        var y = event.clientY - canvas.getBoundingClientRect().top;
+        for (let i = 0; i < detectedArr.length; i++) {
+            let ele = detectedArr[i];
+            ele.img['detail'] = iconinfo0;
+            ele.img['backword'] = iconleft;
+            ele.img['foward'] = iconright;
+            ele.img['close'] = iconclose0;
+            ele.img['add'] = iconclose0;
+        }
+        for (let i = 0; i < detectedArr.length; i++) {
+            let ele = detectedArr[i];
+            let mosuseDetect = mousePostionDetect(x, y, ele)
+            let isInTheArea = mosuseDetect.isInTheArea;
+            let isInTheAddArea = mosuseDetect.isInTheAddArea;
+            let isInTheDetail = mosuseDetect.isInTheDetail;
+            let isInTheForward = mosuseDetect.isInTheForward;
+            let isInTheBackward = mosuseDetect.isInTheBackward;
+            let isInTheDelete = mosuseDetect.isInTheDelete;
+
+            if (ele.shape == srcFieldShape && ele.name.endsWith('3')) {
+                console.log("isInTheDetail", isInTheDetail);
+            }
+
+            if (isInTheAddArea) {
+                ele.img['add'] = iconclose1;
+                break;
+            }
+            if (isInTheArea) { break; }
+            // ele.img['detail'] = iconinfo0;
+            // ele.img['backword'] = iconleft;
+            // ele.img['foward'] = iconright;
+            // ele.img['close'] = iconclose0;
+            if (isInTheDetail) {
+                ele.img['detail'] = iconinfo1;
+                // ele.executeMethod.exec("hover", ele);
+                break;
+            }
+            if (isInTheForward) {
+                ele.img['foward'] = iconright1;
+                // ele.executeMethod.exec("hover", ele);
+                break;
+            }
+            if (isInTheBackward) {
+                ele.img['backword'] = iconleft1;
+                // ele.executeMethod.exec("hover", ele);
+                break;
+            }
+            if (isInTheDelete) {
+                ele.img['close'] = iconclose1;
+                // ele.executeMethod.exec("hover", ele);
+                break;
+            }
+        }
+        redrawALl();
+    }
+
+    function mouseClickDetect(event) {
+        var detectedArr = methodElements.concat(srcColElements).concat(tarColElements);
+        detectedArr.push(srcElement);
+        detectedArr.push(tarElement);
+        var x = event.clientX - canvas.getBoundingClientRect().left;
+        var y = event.clientY - canvas.getBoundingClientRect().top;
+        console.log("click", x, y);
+        for (let i = 0; i < detectedArr.length; i++) {
+            let ele = detectedArr[i];
+            let mosuseDetect = mousePostionDetect(x, y, ele)
+            let isInTheArea = mosuseDetect.isInTheArea;
+            let isInTheAddArea = mosuseDetect.isInTheAddArea;
+            let isInTheDetail = mosuseDetect.isInTheDetail;
+            let isInTheForward = mosuseDetect.isInTheForward;
+            let isInTheBackward = mosuseDetect.isInTheBackward;
+            let isInTheDelete = mosuseDetect.isInTheDelete;
+            if (isInTheAddArea) {
+                ele.executeMethod.exec("addMethod", ele);
+                break;
+            }
+            if (isInTheArea) {
+                ele.executeMethod.exec("click", ele);
+                break;
+            }
+            if (isInTheDetail) {
+                ele.executeMethod.exec("detail", ele);
+                break;
+            }
+            if (isInTheForward) {
+                ele.executeMethod.exec("forward", ele);
+                break;
+            }
+            if (isInTheBackward) {
+                ele.executeMethod.exec("backward", ele);
+                break;
+            }
+            if (isInTheDelete) {
+                ele.executeMethod.exec("deleted", ele);
+                break;
+            }
+        }
+    }
+    function mousePostionDetect(x, y, ele) {
+        let isInTheArea = ele.x - 0.5 * ele.w <= x && ele.x + 0.5 * ele.w >= x
+            && ele.y - 0.5 * ele.h <= y && ele.y + 0.5 * ele.h >= y;
+        let isInTheAddArea = ele.x - 0.5 * ele.w - ele.h * 0.5 <= x && ele.x - 0.5 * ele.w + ele.h * 0.5 >= x
+            && ele.y - 0.5 * ele.h <= y && ele.y + 0.5 * ele.h >= y && ele.shape == tarFieldShape;;
+        let isInTheDetail = ele.x - 0.5 * ele.w <= x && ele.x - 0.25 * ele.w >= x
+            && ele.y - 1.25 * ele.h <= y && ele.y - 0.25 * ele.h >= y;
+        let isInTheBackward = ele.x - 0.25 * ele.w <= x && ele.x >= x
+            && ele.y - 1.25 * ele.h <= y && ele.y - 0.25 * ele.h >= y && ele.shape == methodShape;
+        let isInTheForward = ele.x <= x && ele.x + 0.25 * ele.w >= x
+            && ele.y - 1.25 * ele.h <= y && ele.y - 0.25 * ele.h >= y && ele.shape == methodShape;
+        let isInTheDelete = ele.x + 0.25 * ele.w <= x && ele.x + 0.5 * ele.w >= x
+            && ele.y - 1.25 * ele.h <= y && ele.y - 0.25 * ele.h >= y && ele.shape == methodShape;
+
+        return {
+            isInTheArea: isInTheArea, isInTheDetail: isInTheDetail,
+            isInTheForward: isInTheForward, isInTheBackward: isInTheBackward,
+            isInTheDelete: isInTheDelete, isInTheAddArea: isInTheAddArea
+        };
+
+    }
+</script>
+
+</html>
