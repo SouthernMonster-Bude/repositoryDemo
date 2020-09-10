@@ -1,0 +1,5 @@
+yum install crond
+
+Microsoft.WindowsStore_11805.1001.49.0_x64__8wekyb3d8bbwe
+
+Add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_11805.1001.49.0_x64__8wekyb3d8bbwe\appxmanifest.xml" -disabledevelopmentmode
