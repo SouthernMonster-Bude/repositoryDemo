@@ -1,0 +1,32 @@
+propagation 事务传播行为
+       （
+        required 必须使用调用者的事务;
+        required_new 不是调用者的事务，会将其挂起，每次调用创建新的事务;
+        supported 如果有事务在运行，当前的方法就在这个事务内运行，否则它不会开启事务；
+        not_supported 该方法不支持在事务中运行，如果有运行的事务则会将它(事务)挂起;
+        mandatory 该方法必须运行在事务中，没有事务则会出现异常;
+        never 当前方法不能运行在事务中，否则出现异常;
+        nested 如果有事务运行当前方法应该在这个事务的嵌套事务内运行，否则就启动一个新的事务，并在它自己的事务内运行
+        ）
+isolation 事务隔离级别
+          并发情况下，操作数据的一种规定
+        （
+        Default：和数据库保持一致
+        read_uncommitted 读未提交: 脏读
+        read_committed 读已提交: 不可重复读
+        repeatable_read 可重复读: 幻读
+        serializable 串行化(单线程): 性能低、消耗大
+        ）
+timeout 事务强制回滚前最多可以执行（等待）的时间
+    超过时间 transaction timeout 被强制回滚
+
+readonly 指定当前事务中的一系列操作是否为只读,若设置为了true，不管事务中有没有写的操作都会没有锁，一般在只有度的操作的时候才设置为true
+
+rollBackFor|rollBackForClassName|noRollBackFor|noRollBackForClassName
+
+
+
+
+
+
+mysql.ini里面有个配置是max_connections 表示最大的连接数
