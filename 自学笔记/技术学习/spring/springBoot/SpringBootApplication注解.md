@@ -52,6 +52,9 @@ public @interface EnableAutoConfiguration {
     
     ```
     
+    spring boot在启动的时候从类路径下的META-INF/spring.factories中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入容器中，自动配置类就生效，帮我们进行自动配置工作；以前我们需要自己配置的东西，自动配置类都将帮我们完成；
+    
+    J2EE的整体解决方案和自动配置都在spring-boot-autoconfigure-2.2.5.RELEASE.jar
 
 
    

@@ -42,3 +42,5 @@ build/
 py*/**/*.svg
 py*/**/*.json
 .gitignore
+### 排除 office临时文件
+~$*.*

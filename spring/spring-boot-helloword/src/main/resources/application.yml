@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+    profiles:
+      active: dev
+---
+server:
+  port: 8083
+spring:
+  profiles: dev
+---
+server:
+  port: 8283
+spring:
+  profiles: prod
+
+#people:
+#  firstName: 张
+#  lastName: 三
+#  age: 10
+#  birth: 2010/5/6
+#  boss: true
+#  map: {book: 三天光明,cito: gde}
+#  list: ["hhd",112]
+#  dog:
+#    name: 小狗
+#    age: 4
