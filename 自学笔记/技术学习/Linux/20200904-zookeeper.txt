@@ -5,6 +5,16 @@ leader + follower
 节点总数2n+1 方便选举
 
 搭建zookeeper集群
+卸载JDK
+1、先输入java -version 查看是否安装了jdk
+2、如果安装了，检查下安装的路径 which java（查看JDK的安装路径） 
+3、卸载 rm -rf JDK地址（卸载JDK）  rm -rf /usr/java/jdk/jdk1.8.0_172/
+4、vim命令编辑文件profile  vim /etc/profile
+
+
+rpm -e `rpm -qa|grep jdk`
+rpm -e `rpm -qa |grep java`
+rpm -e `rpm -qa |grep gcj`
 安装jdk
 ```
 java -version
@@ -26,12 +36,29 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64/jr
 export PATH=$PATH:$JAVA_HOME/bin
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
+        yum 安装的总是失败，一下是手动安装
+        官网下载jdk jdk-8u121-linux-x64.tar.gz
+        [root@localhost opt]# tar -zxvf software/jdk-8u121-linux-x64.tar.gz -C module/
+
+        export JAVA_HOME=/opt/module/jdk1.8.0_121
+        export PATH=$PATH:$JAVA_HOME/bin
+        export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+
+source /etc/profile
+
+
+
 
 修改给服务器名称分别为node-1，node-2，node-3
 并在/etc/hosts里面配置
 192.168.0.200 node-1 node-1
 192.168.0.202 node-2 node-2
 192.168.0.203 node-3 node-3
+
+借用scp
+scp -r local_folder remote_username@remote_ip:remote_folder 
+scp root@www.runoob.com:/home/root/others/music /home/space/music/1.mp3
 
 在各服务器配置好服务器信息
 vim /etc/sysconfig/network
@@ -53,6 +80,12 @@ dataDir=/root/temp/zkdata
 server.1=node-1:2888:3888  
 server.2=node-2:2888:3888
 server.3=node-3:2888:3888
+
+server.A=B:C:D。
+A 是一个数字，表示这个是第几号服务器
+B 是这个服务器的 ip 地址；
+C 是这个服务器与集群中的 Leader 服务器交换信息的端口；
+D 是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的Leader，而这个端口就是用来执行选举时服务器相互通信的端口
 
 vim /etc/profile
 增加

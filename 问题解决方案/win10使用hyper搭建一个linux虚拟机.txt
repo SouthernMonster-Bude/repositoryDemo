@@ -36,10 +36,16 @@ NETMASK=255.255.255.0
 <<<<<<<<<
 systemctl restart network
 
-2.5 去物理机的网络适配中心将自己创建的虚拟交换机网卡设置为固定ip地址 此地址和虚拟机里面自己配置的地址保存一致
+2.5 去物理机的网络适配中心将自己创建的虚拟交换机网卡设置为固定ip地址 此地址和虚拟机里面自己配置的地址网段保存一致
 
 2.6 ping baidu.com
 
 2.7 在物理机控制台ping 虚拟机的ip
 
 注意：hyper-v的框架环境 与vmshare工具有冲突，一同使用会出一些问题。直接前搭建安卓虚拟机的时候遇到的问题。
+
+
+停止firewall（防火墙）–临时关闭
+输入命令：systemctl stop firewalld.service
+禁止firewall（防火墙）开机启动 --永久关闭
+输入命令：systemctl disable firewalld.service
