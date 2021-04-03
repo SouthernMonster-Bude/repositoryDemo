@@ -63,19 +63,35 @@ nn下
 4.Container
   它是yarn中的资源抽象，它分装了某个节点上的多维度资源，如内存，cpu，磁盘，网络等
 
+```mermaid
 
-```
-[client]--                                            ---[NodeManager] + [Container] + [applicationMaster]
-          --job submission--->[ResourceManager] <---node status + resource request--- 
-[client]--                                            ---[NodeManager] + [Container] + [applicationMaster]
-[client]--                                            ---[NodeManager] + [Container] + [applicationMaster]
+%% graph LR
+%% graph TD
+graph LR
+A11(client)
+A21[NodeManager+Container+applicationMaster]
+A12[client]
+A22[NodeManager+Container+applicationMaster]
+A13[client]
+A23[NodeManager+Container+applicationMaster]
+B[ResourceManager]
+A1(job submission)
+A2(node status + resource request)
+A11-->A1
+A12-->A1
+A13-->|左|A1
+A21-->A2
+A22-->A2
+A23-->|右|A2
+A1-->B
+A2-->B
 
 ```
 
 ## **Map Reduce**
 MapReduce将计算过程分为两个阶段，Map+Reduce
 
-Map阶段并行处理出入数据
+Map阶段并行处理输入数据
 
 Reduce阶段对Map的结果进行汇
 
@@ -95,7 +111,7 @@ Reduce阶段对Map的结果进行汇
 6. Flink是当前最流行的开源大数据内存计算框架；用于实时计算的场景较多；
 7. Oozie是一个管理Hadoop作业的工作流调度管理系统；
 8. Hbase是一个分布式、面向列的开源数据库。Hbase不同于一般的关系型数据库，他是一个适合于非结构化数据存储的数据库；
-9. Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能，可以将sql语句转换为MapReduce任务进行运行。优点是学习成本底，可以通过类sql语句快速实现简单的MapReduce统计不必开发MapReduce应用；
+9. Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能，可以将sql语句转换为MapReduce任务进行运行。优点是学习成本低，可以通过类sql语句快速实现简单的MapReduce统计不必开发MapReduce应用；
 10. ZooKeeper是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、分布式同步、组服务。
 
 

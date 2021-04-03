@@ -25,9 +25,9 @@ NAME=eth0
 UUID=114601bb-f766-4194-a7bd-831f6b7bdf94
 DEVICE=eth0
 ONBOOT=yes
-IPADDR=192.168.0.201
-GATWAY=192.168.0.1
-DNS1=192.168.0.1
+IPADDR=192.168.10.101
+GATWAY=192.168.10.1
+DNS1=192.168.10.1
 DNS2=114.114.114.114
 DNS3=8.8.8.8
 NETMASK=255.255.255.0
@@ -88,7 +88,8 @@ myhadoop   ALL=(ALL)     ALL
 # 在/opt目录下创建module、software文件夹
 # 修改module、software文件夹的所有者 cd
 sudo mkdir /opt/module /opt/software
-sudo chown myhadoop:myhadoop /opt/module /opt/software
+sudo  chown -R myhadoop:myhadoop /opt/module /opt/software
+chmod -R 777 /tmp/
 ```
 
 ### 安装JDK
@@ -97,9 +98,8 @@ sudo chown myhadoop:myhadoop /opt/module /opt/software
 
 2. 将jdk文件导入opt目录
 
-3. 安装完jdk步骤参考【[技术学习/Linux/20200904-zookeeper.txt](../Linux/20200904-zookeeper.txt)】
+3. 安装完jdk步骤参考【[技术学习/Linux/20200904-zookeeper.txt](../../Linux/20200904-zookeeper.txt)】
 
-4. 
 
 ### 执行Hadoop安装操作
 
@@ -172,5 +172,5 @@ done
 >
 > share：存放hadoop依赖的jar包、文档、官方案例
 
-### 
+
 

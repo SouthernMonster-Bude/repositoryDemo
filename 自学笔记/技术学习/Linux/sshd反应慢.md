@@ -24,6 +24,8 @@ systemctl restart sshd
 
 **非对称加密** （rsa算法、ecdsa算法）加密解密密钥不一样
 
+![image-20210223163322243](sshd反应慢/img/image-20210223163322243.png)
+
 
 
 ```sh
