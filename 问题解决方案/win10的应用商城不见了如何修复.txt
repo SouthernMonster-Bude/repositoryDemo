@@ -1,5 +1,0 @@
-进入输入powershell应用窗口，命令Get-AppxPackage -allusers | Select Name, PackageFullName后回车
-
-找到Microsoft.WindowsStore(应用商店)这个应用，然后复制右侧对应的包名称 Microsoft.WindowsStore_xxxx.xxx.xxxx.xx_x64__8wekyb3d8bbwe
-
-Add-appxpackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_xxxx.xxx.xxxx.xx_x64__8wekyb3d8bbwe\appxmanifest.xml" -disabledevelopmentmode

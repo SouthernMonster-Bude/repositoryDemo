@@ -1,7 +1,0 @@
-
-添加这个依赖
-在一个pojo类上面添加@Data注解之后，不用再写setter个getter
-
-
-
-idea 需要安装lombook的插件 支持

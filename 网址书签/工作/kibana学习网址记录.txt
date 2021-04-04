@@ -1,6 +1,0 @@
-elasticsearch学习基础知识总结
-    https://segmentfault.com/a/1190000019057909
-elasticsearch下载
-    https://www.elastic.co/cn/downloads/elasticsearch
-Kibana 下载
-    https://www.elastic.co/cn/downloads/kibana

@@ -1,4 +1,0 @@
-update cs_zsk set fbrq = '2015-5-1'::date + trunc(random()*4000)::integer +' 00:22:22'::time + (trunc(random()*3600*24)||' second')::interval
-
-
-select '2015-5-1'::date + trunc(random()*4000)::integer +' 00:22:22'::time + (trunc(random()*3600*24)||' second')::interval;

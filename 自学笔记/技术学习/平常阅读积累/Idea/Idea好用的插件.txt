@@ -1,4 +1,0 @@
-1. SequenceDiagram 一键生成方法的 序列图
-2. Alibaba Java Coding Guidelines 阿里巴巴规约
-3. lombok 支持@Data注解的扫描
-4. git

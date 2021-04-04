@@ -1,4 +1,0 @@
-打开windows  power shell
-chkdsk
-
-src /scannow
